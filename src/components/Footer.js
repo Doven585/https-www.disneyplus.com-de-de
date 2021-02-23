@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 function Footer() {
-    return(
-        <nav>footer</nav>
-    )
+  return (
+    <div>
+      <h1>Footer</h1>
+      <ul>
+        <li>Movie</li>
+        <li>Tv-Series</li>
+      </ul>
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;
