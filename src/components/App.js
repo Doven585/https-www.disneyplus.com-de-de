@@ -4,9 +4,11 @@ import NavBar from "./NavBar";
 import React from "react";
 import { Route, NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar"
+import LoginPopup from "./LoginPopup"
 
 function App() {
   return (
+    
     <div>
       <nav className="nav nav-pills">
         <li className="nav-item">
@@ -19,6 +21,8 @@ function App() {
       <Route path="/" exact>
       </Route>
       <Route path="/login">
+      
+        <LoginPopup />
         <Login />
       </Route>
     </div>
