@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Footer() {
   return (
     <div>
-      <h1>Footer</h1>
+      <h1>List</h1>
       <ul>
         <li>Movie</li>
         <li>Tv-Series</li>
