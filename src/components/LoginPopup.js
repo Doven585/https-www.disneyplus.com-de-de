@@ -1,12 +1,17 @@
 import React from 'react'
 
-function LoginPopup() {
+function LoginPopup(props) {
+    function handleSubmit(e) {
+        e.preventDefault()
+        props.login({name: "Doven"})
+    }
+
     return (
         <div className="overlay">
         <div className="popup login">
 
            <h2>Login</h2>
-           <form>
+           <form onSubmit={handleSubmit}>
               <label>Username</label>
               <input type="text" />
                
