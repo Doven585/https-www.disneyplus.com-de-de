@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { MessengerPiggeon } from "./App"
 
-function LoginPopup(props) {
+function LoginPopup() {
+    const { loginUser } = useContext(MessengerPiggeon)
+
     function handleSubmit(e) {
         e.preventDefault()
-        props.login({name: "Doven"})
+        loginUser({username: "Doven", favorites: ["Transformers"]})
     }
 
     return (
