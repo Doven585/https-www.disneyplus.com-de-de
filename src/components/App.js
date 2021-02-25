@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { Route, NavLink, Redirect } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import LoginPopup from "./LoginPopup";
+import Movies from "./Movies"
 
 function App() {
   const [user, setUser] = useState(null);
@@ -19,17 +20,17 @@ function App() {
 
   return (
     <div>
-      <nav className="nav nav-pills">
-        <li className="nav-item">
-          <NavLink activeClassName="active" exact className="nav-link" to="/">
+      <nav>
+        <li className="navbar">
+          <NavLink to="/">
             Home
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="my-navbar">
           {user ? (
-            <button className="nav-link" onClick={logoutUser}>Log out</button>
+            <button onClick={logoutUser}>Log out</button>
           ) : (
-            <NavLink activeClassName="active" className="nav-link" to="/login">
+            <NavLink to="/login">
               Login
             </NavLink>
           )}
@@ -38,6 +39,7 @@ function App() {
       <Route path="/" exact></Route>
       <Route path="/login">
         {user ?
+        
           <Redirect to="/" />
           : <LoginPopup login={loginUser} />}
       </Route>
