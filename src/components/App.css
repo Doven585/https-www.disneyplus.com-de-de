@@ -32,20 +32,22 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.popup{
+.popup {
   position: absolute;
   padding: 20px;
   border: 2px solid gray;
   right: 0;
   background: rgb(112, 58, 58);
   z-index: 2;
-  
+
 }
+
 /*
 .overlay{
   position: absolute;
@@ -58,15 +60,44 @@
 }
 */
 
-.navbar{
-  width: 100%;
-  float: left;
-  margin: 0 0 3em 0;
+.navbar-home {
+  width: 150%;
+  margin: 0;
   padding: 0;
   background-color: #0a0a0a;
-  border-bottom: 1px solid #ccc; 
-  border-top: 1px solid #ccc;
+  border-top: 50px;
   text-align: center;
-  
+  list-style: none;
+
+
 }
 
+.nav-link {
+  color: white;
+  border-style: solid;
+  background-color: black;
+  
+}
+.navbar-movies{
+  justify-content: left;
+  list-style: none;
+}
+.my-navbar{
+  justify-content: right;
+}
+
+
+
+
+
+.nav-link:hover {
+  background-color: gray;
+}
+
+body {
+  background-color: rgb(104, 59, 59);
+}
+.my-api{
+  display: grid;
+  justify-content: end;
+}

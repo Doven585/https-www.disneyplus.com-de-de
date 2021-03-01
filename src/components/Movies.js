@@ -1,9 +1,13 @@
-import Favorites from "./Favorites"
-export default function Movies() {
-    return (
-        <>
+export default function Movies(){
+    return(
+        <div>
             <h1>Movies</h1>
-            <Favorites />
-        </>
+            <h2>Favorites</h2>
+            <ul>
+                <li>
+                     Breaking Bad
+                </li>
+            </ul>
+        </div>
     )
 }
