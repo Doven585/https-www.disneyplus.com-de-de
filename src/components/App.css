@@ -95,9 +95,10 @@
 }
 
 body {
-  background-color: rgb(104, 59, 59);
+  background-color: rgb(19, 18, 18);
 }
-.my-api{
-  display: grid;
-  justify-content: end;
+.container{
+ color: whitesmoke;
+
+  border: black solid;
 }

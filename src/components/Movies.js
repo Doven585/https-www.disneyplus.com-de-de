@@ -12,17 +12,18 @@ export default function Movies(){
     console.log(data)
 
     return(
-        <ul>
+        <ul className="container">
        {/*<img src={`https://image.tmdb.org/t/p/w500/${data.images.base_url}`}/>*/ }
        {data.map((movie=>
        <div key={movie.id}> 
-           <img className="my-api" src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}/>
+           <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}/>
        <h1>{movie.original_title}</h1>
        <h2>{movie.overview}</h2>
        <h3>{movie.popularity}</h3>
        <h4>{movie.release_date}</h4>
        <h5>{movie.video}</h5>
        <h6>{movie.vote_average}</h6>
+       
        </div>))}
         
         </ul>
