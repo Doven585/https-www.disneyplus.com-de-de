@@ -43,7 +43,7 @@
   padding: 20px;
   border: 2px solid gray;
   right: 0;
-  background: rgb(112, 58, 58);
+  background: rgb(195, 42, 14);
   z-index: 2;
 
 }
@@ -79,7 +79,8 @@
   
 }
 .navbar-movies{
-  justify-content: left;
+  display: grid;
+  
   list-style: none;
 }
 .my-navbar{
@@ -99,6 +100,7 @@ body {
 }
 .container{
  color: whitesmoke;
+ 
 
   border: black solid;
 }
