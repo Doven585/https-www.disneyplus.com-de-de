@@ -6,6 +6,10 @@ import { Route, NavLink, Redirect } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import LoginPopup from "./LoginPopup";
 import Movies from "./Movies";
+import * as ReactBootstrap from 'react-bootstrap';
+
+
+
 
 export const MessengerPiggeon = React.createContext(null);
 
@@ -29,19 +33,19 @@ function App() {
         <nav>
           <li className="navbar-home">
             <NavLink className="nav-link" to="/">
-              Home
+             <button className="btn btn-outline-secondary">Home</button> 
             </NavLink>
           </li>
           <li className="navbar-movies">
-            <NavLink to="/movies">Movies</NavLink>
+            <NavLink to="/movies"><button className="btn btn-outline-secondary">Movies</button></NavLink>
           </li>
           <li className="my-navbar">
             {user.username ? (
-              <button className="log-out" onClick={logoutUser}>
+              <button className="btn btn-outline-secondary" onClick={logoutUser}>
                 Log out
               </button>
             ) : (
-              <NavLink to="/login">Login</NavLink>
+              <NavLink to="/login"><button className="btn btn-outline-secondary">Login</button></NavLink>
             )}
           </li>
         </nav>
