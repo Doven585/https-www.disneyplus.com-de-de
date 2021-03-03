@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as ReactBootstrap from 'react-bootstrap';
 
 
+
 ReactDOM.render(
 	<BrowserRouter>
 		<App />
