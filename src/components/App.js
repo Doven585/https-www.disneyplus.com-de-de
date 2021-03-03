@@ -11,6 +11,7 @@ import * as ReactBootstrap from 'react-bootstrap';
 
 
 
+
 export const MessengerPiggeon = React.createContext(null);
 
 function App() {
@@ -29,8 +30,9 @@ function App() {
 
   return (
     <MessengerPiggeon.Provider value={{ user, loginUser }}>
-      <div>
-        <nav>
+      <div className="backgruond">
+        
+       <nav>
           <li className="navbar-home">
             <NavLink className="nav-link" to="/">
              <button className="btn btn-outline-secondary">Home</button> 
@@ -48,8 +50,9 @@ function App() {
               <NavLink to="/login"><button className="btn btn-outline-secondary">Login</button></NavLink>
             )}
           </li>
-        </nav>
-        <Route path="/" exact></Route>
+       </nav>
+        <Route path="/" exact> 
+        </Route>
         <Route path="/login">
           {user.username ? <Redirect to="/" /> : <LoginPopup />}
         </Route>

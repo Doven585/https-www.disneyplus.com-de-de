@@ -20,22 +20,23 @@ export default function Movies() {
     return <div className="spinner">Loading...</div>;
   } else {
     return (
-      <ul className="container">
-        {/*<img src={`https://image.tmdb.org/t/p/w500/${data.images.base_url}`}/>*/}
+     
+        <div className="movie-cards" >
         {data.map((movie) => (
-          <div key={movie.id}>
+          <div className="movie" key={movie.id}>
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
             />
-            <h1>Title: {movie.original_title}</h1>
-            <h2>Overview: {movie.overview}</h2>
-            <h3>Popularity: {movie.popularity}</h3>
-            <h4>Release Date: {movie.release_date}</h4>
-            <h5>Video:{movie.video}</h5>
-            <h6>Vote-Average: {movie.vote_average}</h6>
+            <h3>Title: {movie.original_title}</h3>
+            <p>Overview: {movie.overview}</p>
+            <p>Popularity: {movie.popularity}</p>
+            <p>Release Date: {movie.release_date}</p>
+            <p>Video:{movie.video}</p>
+            <p>Vote-Average: {movie.vote_average}</p>
           </div>
+         
         ))}
-      </ul>
+       </div>
     );
   }
 }
