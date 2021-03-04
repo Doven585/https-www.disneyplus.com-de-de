@@ -9,34 +9,30 @@
   z-index: 2;
 
 }
+
 .disney{
   height: 300px;
 }
+
 .logo{
   color: whitesmoke;
+  margin-top: 100px;
+  padding-left: 20px;
 }
 .navbar-home {
   width: 100%;
-  margin: 0;
-  padding: 0;
   background-color: #040714;
   text-align: right;
   list-style: none;
 }
+
 #disney{
+  padding: 15px;
+  margin: 15px;
   background: linear-gradient(
     90deg
     ,#fa1660 0,#ff6e00 100%);
 }
-
-
-
-
-
-.navbar-movies {
-  list-style: none;
-}
-
 
 .movie {
   color: whitesmoke;
@@ -72,11 +68,6 @@
     transform: rotate(360deg);
   }
 }
-
-.my-navbar {
-  list-style: none;
-}
-
 
 body {
   color: antiquewhite;
