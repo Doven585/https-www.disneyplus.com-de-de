@@ -62,12 +62,12 @@ function App() {
         </Route>
         <div className="logo">
          <img src={Doven} alt="logo" width="300" height="100"/>
-         <h1>This is just an exercise in Rect</h1>
+          <h1>This is just an exercise in React</h1>
           <p>Some ideas are based on disneyplus!!!</p>
           
         
           
-       </div>
+        </div>
         <Route path="/movies">
           <Movies />
         </Route>
