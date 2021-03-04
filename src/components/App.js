@@ -8,7 +8,7 @@ import LoginPopup from "./LoginPopup";
 import Movies from "./Movies";
 import * as ReactBootstrap from "react-bootstrap";
 
-import Disney from "./disneyy.png"
+import Doven from "./dovennlogo.png"
 
 
 export const MessengerPiggeon = React.createContext(null);
@@ -60,8 +60,14 @@ function App() {
         <Route path="/login">
           {user.username ? <Redirect to="/" /> : <LoginPopup />}
         </Route>
+        <div className="logo">
+         <img src={Doven} alt="logo" width="300" height="100"/>
+         <h1>This is just an exercise in Rect</h1>
+          <p>Some ideas are based on disneyplus!!!</p>
+          
         
-        <img src={Disney} alt="disney" />
+          
+       </div>
         <Route path="/movies">
           <Movies />
         </Route>

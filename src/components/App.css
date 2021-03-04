@@ -3,15 +3,18 @@
   padding: 20px;
   border: 2px solid gray;
   right: 0;
-  background: rgb(195, 42, 14);
+  background: linear-gradient(
+    90deg
+    ,#fa1660 0,#ff6e00 100%);
   z-index: 2;
 
 }
 .disney{
   height: 300px;
 }
-
-
+.logo{
+  color: whitesmoke;
+}
 .navbar-home {
   width: 100%;
   margin: 0;
