@@ -10,15 +10,8 @@ import { Shopingcards } from "./Shopingcards"
 export const MessengerPiggeon = React.createContext(null);
 
 function App() {
-  const reducer = (state, action) => {
-    return{
-      ...state, showData:!state.showData
-    }
-  }
-  const initialState = {showData: true}
-  const [state, dispach] = useReducer(reducer, initialState)
+  const [card, setCards] = useState(null)
   
-
   const [user, setUser] = useState({
     username: "Doven",
     favorites: ["Cinderella", "Ice Princess"],
@@ -33,6 +26,7 @@ function App() {
   }
 
   return (
+                    /* for all app with contex without props */
     <MessengerPiggeon.Provider value={{ user, loginUser }}>
       <div className="backgruond">
         <li className="navbar-home">
@@ -44,7 +38,7 @@ function App() {
           <img src={Doven} alt="logo" width="300" height="100" />
           <h1>This is just an exercise in React</h1>
           <p>Some ideas are based on disneyplus!!!</p>
-          <Shopingcards value={{showData: state.showData, dispach}} />
+          <Shopingcards value={card, setCards} />
         </div>
         <div>
           <NavLink to="/movies">
