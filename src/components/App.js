@@ -1,15 +1,24 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import { Route, NavLink, Redirect } from "react-router-dom";
 import LoginPopup from "./LoginPopup";
 import Movies from "./Movies";
 import * as ReactBootstrap from "react-bootstrap";
-
 import Doven from "./dovennlogo.png";
+import { Shopingcards } from "./Shopingcards"
 
 export const MessengerPiggeon = React.createContext(null);
 
 function App() {
+  const reducer = (state, action) => {
+    return{
+      ...state, showData:!state.showData
+    }
+  }
+  const initialState = {showData: true}
+  const [state, dispach] = useReducer(reducer, initialState)
+  
+
   const [user, setUser] = useState({
     username: "Doven",
     favorites: ["Cinderella", "Ice Princess"],
@@ -35,6 +44,7 @@ function App() {
           <img src={Doven} alt="logo" width="300" height="100" />
           <h1>This is just an exercise in React</h1>
           <p>Some ideas are based on disneyplus!!!</p>
+          <Shopingcards value={{showData: state.showData, dispach}} />
         </div>
         <div>
           <NavLink to="/movies">
@@ -42,7 +52,6 @@ function App() {
               Movies
             </button>
           </NavLink>
-
           {user.username ? (
             <button
               id="disney"
@@ -57,6 +66,9 @@ function App() {
                 Login
               </button>
             </NavLink>
+            
+            
+            
           )}
         </div>
         <Route path="/" exact></Route>
@@ -69,6 +81,7 @@ function App() {
         </Route>
       </div>
     </MessengerPiggeon.Provider>
+    
   );
 }
 
