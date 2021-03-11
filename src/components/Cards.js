@@ -10,7 +10,7 @@ function Cards(props) {
         <div>
             <h2>{props.name}</h2>
             <h4>{props.price}</h4>
-            <button onClick={ddToCart}>Add to cart</button>
+            <button onClick={addToCart}>Add to cart</button>
             <hr/>
         </div>
     )

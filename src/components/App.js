@@ -8,19 +8,23 @@ import Doven from "./dovennlogo.png";
 import { Shopingcards } from "./Shopingcards"
 
 
-export const MessengerPiggeon = React.createContext(null);
+export let MessengerPiggeon
 
 function App() {
   {/*const [card, setCards] = useState(null)*/}
   
-  const [user, setUser] = useState({
-    username: "Doven",
-    favorites: ["Cinderella", "Ice Princess"],
-  });
+  const [user, setUser] = useState({});
 
-  function loginUser(userData) {
-    setUser(userData);
+  async function loginUser(userData) {
+    const response = await fetch("http://dummy.restapiexample.com/api/v1/create", {
+      method: "POST",
+      body: JSON.stringify(userData)
+    })
+    const data = await response.json()
+    if(data.status == "success") setUser(data.data);
   }
+
+  MessengerPiggeon = React.createContext({ user, loginUser });
 
   function logoutUser() {
     setUser({ username: null });
@@ -28,18 +32,18 @@ function App() {
 
   return (
                     /* for all app with contex without props */
-    <MessengerPiggeon.Provider value={{ user, loginUser }}>
+    
       <div className="backgruond">
         <li className="navbar-home">
           <NavLink className="nav-link" to="/">
             <button className="btn btn-outline-secondary">Home</button>
           </NavLink>
+          {user.id && <div class="nav-link" title={user.id}>👨</div>}
         </li>
         <div className="logo">
           <img src={Doven} alt="logo" width="300" height="100" />
           <h1>This is just an exercise in React</h1>
           <p>Some ideas are based on disneyplus!!!</p>
-          <Cart />
           <Shopingcards />
         </div>
         <div>
@@ -48,7 +52,7 @@ function App() {
               Movies
             </button>
           </NavLink>
-          {user.username ? (
+          {user.id ? (
             <button
               id="disney"
               className="btn btn-outline-secondary"
@@ -69,14 +73,13 @@ function App() {
         </div>
         <Route path="/" exact></Route>
         <Route path="/login">
-          {user.username ? <Redirect to="/" /> : <LoginPopup />}
+          {user.id ? <Redirect to="/" /> : <LoginPopup />}
         </Route>
 
         <Route path="/movies">
           <Movies />
         </Route>
       </div>
-    </MessengerPiggeon.Provider>
     
   );
 }

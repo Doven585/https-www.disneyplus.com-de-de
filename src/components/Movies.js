@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import * as ReactBootstrap from "react-bootstrap";
+import { MessengerPiggeon } from "./App";
 
 export default function Movies() {
   const [data, setData] = useState(null);
+  const { user } = useContext(MessengerPiggeon)
   useEffect(async () => {
     const response = await fetch(
       "https://api.themoviedb.org/3/discover/movie?api_key=14df7912217b3871d3af70261869c1c6"
@@ -33,6 +35,7 @@ export default function Movies() {
             <p>Release Date: {movie.release_date}</p>
             <p>Video:{movie.video}</p>
             <p>Vote-Average: {movie.vote_average}</p>
+            {user.id ? <button className="btn btn-outline-secondary">Add to favourites</button> : <p>Please log in to save this movie</p>}
           </div>
          
         ))}
