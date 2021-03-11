@@ -6,7 +6,7 @@ import Movies from "./Movies";
 import * as ReactBootstrap from "react-bootstrap";
 import Doven from "./dovennlogo.png";
 import { Shopingcards } from "./Shopingcards"
-import Cart from "./Cart"
+
 
 export const MessengerPiggeon = React.createContext(null);
 
