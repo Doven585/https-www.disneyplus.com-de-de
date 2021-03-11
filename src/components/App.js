@@ -6,11 +6,12 @@ import Movies from "./Movies";
 import * as ReactBootstrap from "react-bootstrap";
 import Doven from "./dovennlogo.png";
 import { Shopingcards } from "./Shopingcards"
+import Cart from "./Cart"
 
 export const MessengerPiggeon = React.createContext(null);
 
 function App() {
-  const [card, setCards] = useState(null)
+  {/*const [card, setCards] = useState(null)*/}
   
   const [user, setUser] = useState({
     username: "Doven",
@@ -38,7 +39,8 @@ function App() {
           <img src={Doven} alt="logo" width="300" height="100" />
           <h1>This is just an exercise in React</h1>
           <p>Some ideas are based on disneyplus!!!</p>
-          <Shopingcards value={card, setCards} />
+          <Cart />
+          <Shopingcards />
         </div>
         <div>
           <NavLink to="/movies">

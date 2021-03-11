@@ -8,8 +8,8 @@ import Cards from "./Cards"
 
 
 export const Shopingcards  = () => {
-    const {card, setCards} = useContext(MessengerPiggeon)
-    const state = useContext(MessengerPiggeon)
+    //const {card, setCards} = useContext(MessengerPiggeon)
+    //const state = useContext(MessengerPiggeon)
     const dataBase = [
         {
             name: "Tv-Series",
@@ -29,11 +29,9 @@ export const Shopingcards  = () => {
         
     ]
  
-    return (card)&& (
+    return (
         
-        <div onChange={()=> setCards()
-
-         }>
+        <div>
            {
                dataBase.map(item => (
                    <Cards name={item.name} price={item.price}
